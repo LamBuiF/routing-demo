@@ -1,0 +1,33 @@
+<ul class="list-group">
+  <li class = "list-group-item active">
+    Courses
+  </li>
+  <li *ngFor="let course of courses" class="list-group-item"
+    (click) = "selectCourse(course)"
+    [ngClass] = "{'active' : course['id'] == selectedCourse['id']}">
+    {{course.title}}
+  </li>
+  <li class = "list-group-item active">
+    Modules
+  </li>
+  <li *ngFor="let module of selectedCourse.module" class="list-group-item"
+    (click) = "selectModule(module)"
+    [ngClass] = "{'active' : module['id'] == selectedModule['id']}">
+    {{module.title}}
+  </li>
+  <li class = "list-group-item active">
+    Lessons
+  </li>
+  <li *ngFor="let lesson of selectedModule.lesson" class="list-group-item">
+    {{lesson.title}}
+  </li>
+</ul>
+<h2>Add course: </h2>
+Course Title
+<input [(ngModel)] = "CourseTitle">
+<br/>
+Author
+<input [(ngModel)] = "Author">
+<br/>
+<button (click) = "addCourse(CourseTitle, Author)">Add Course</button>
+
