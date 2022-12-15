@@ -30,4 +30,14 @@ Author
 <input [(ngModel)] = "Author">
 <br/>
 <button (click) = "addCourse(CourseTitle, Author)">Add Course</button>
+<h2>Add module to current course: </h2>
+Module Title
+<input [(ngModel)] = "ModuleTitle">
+<br/>
+<button (click) = "addModule(ModuleTitle)">Add Module</button>
+<h2>Add lesson to current module: </h2>
+Lesson Title
+<input [(ngModel)] = "LessonTitle">
+<br/>
+<button (click) = "addLesson(LessonTitle)">Add Lesson</button>
 
