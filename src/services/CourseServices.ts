@@ -30,7 +30,7 @@ export class CourseServices{
     const u = '{"title": "' + mTitle + '"}'
     console.log(u)
     const jobj = JSON.parse(u)
-    return this.http.post<any>("http://courseservice-env.eba-kc5r3dri.us-east-2.elasticbeanstalk.com/api/v1/courses/", jobj)
+    return this.http.patch<any>("http://courseservice-env.eba-kc5r3dri.us-east-2.elasticbeanstalk.com/api/v1/courses/" + id, jobj)
     // return this.http.patch<any>("http://localhost:8080/api/v1/courses/" + id, jobj)
 
   }
@@ -39,7 +39,7 @@ export class CourseServices{
     const u = '{"title": "' + lTitle + '"}'
     console.log(u)
     const jobj = JSON.parse(u)
-    return this.http.post<any>("http://courseservice-env.eba-kc5r3dri.us-east-2.elasticbeanstalk.com/api/v1/modules/", jobj)
+    return this.http.patch<any>("http://courseservice-env.eba-kc5r3dri.us-east-2.elasticbeanstalk.com/api/v1/modules/" + id, jobj)
     // return this.http.patch<any>("http://localhost:8080/api/v1/modules/" + id, jobj)
   }
 
